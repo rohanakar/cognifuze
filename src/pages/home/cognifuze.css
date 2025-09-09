@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+@keyframes moveClouds {
+    0% {
+      transform: translateZ(0);
+    }
+    100% {
+      transform: translate3d(-40%, 0, 0);
+    }
+  }
+  
+  .moving-clouds {
+    animation: moveClouds 80s linear infinite;
+  }
+  
+  body, html {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .section {
+    @apply relative flex flex-col items-center justify-center h-screen text-white bg-center bg-cover;
+  }
+  
+  .overlay {
+    @apply absolute inset-0 bg-black/50;
+  }
+  
+  .clouds {
+    @apply absolute bottom-0 w-full h-60;
+    background-image: url('/assets/clouds.png');
+    background-repeat: repeat-x;
+    animation: moveClouds 60s linear infinite;
+  }
+  
+  @keyframes moveClouds {
+    from { background-position-x: 0; }
+    to { background-position-x: -3000px; }
+  }
+  
+  .hero-title {
+    @apply text-9xl font-bold mb-4;
+    background: linear-gradient(to bottom, #ffffffc5 35%, #4f7182 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .hero-subtitle {
+    @apply text-3xl;
+
+  }
+  
